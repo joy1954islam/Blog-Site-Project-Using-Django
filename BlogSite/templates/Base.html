@@ -1,0 +1,111 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<html lang="en">
+<head>
+	<title>Login </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'Social_Apps/images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/vendor/bootstrap/css/bootstrap.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark static-top">
+
+    <a class="navbar-brand" href="/">Home</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            {% if request.user.is_authenticated %}
+                <div class="dropdown show">
+                      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       {{ user.username }}
+                      </a>
+
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <a class="dropdown-item" href="{% url 'Profile' %}">Profile</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="{% url 'password' %}">Change password</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="{% url 'change_profile' %}">Change Profile</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="{% url 'settings' %}">Setting</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="{% url 'logout'%}">Log out</a>
+                      </div>
+                </div>
+
+            <li class="nav-item">
+                <a  class="nav-link" href="{% url 'Profile' %}">Profile</a>
+            </li>
+
+            <li class="nav-item">
+                <a  class="nav-link" href="{% url 'change_profile' %}">Change Profile</a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout'%}">Log out</a>
+            </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Log in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'sign_up' %}">Create an account</a>
+                </li>
+            {% endif %}
+        </ul>
+
+
+    </div>
+
+</nav>
+<div class="container">
+      <div class="row justify-content">
+        <div class="col-8">
+          <hr class="mt-0 mb-4">
+          {% block content %}
+
+          {% endblock %}
+        </div>
+      </div>
+</div>
+<!--===============================================================================================-->
+	<script src="{% static 'Social_Apps/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Social_Apps/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Social_Apps/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'Social_Apps/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Social_Apps/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Social_Apps/vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'Social_Apps/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Social_Apps/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Social_Apps/js/main.js' %}"></script>
+
+</body>

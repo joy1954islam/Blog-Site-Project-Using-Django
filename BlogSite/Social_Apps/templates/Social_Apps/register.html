@@ -1,0 +1,131 @@
+
+{% load crispy_forms_tags %}
+{% load static %}
+<html lang="en">
+<head>
+	<title>Login </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'Social_Apps/images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/vendor/bootstrap/css/bootstrap.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'Social_Apps/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url({% static 'Social_Apps/images/bg-01.jpg' %})">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form class="login100-form validate-form" method="POST">
+                     {% csrf_token %}
+					<span class="login100-form-title p-b-49">
+						Create a Account
+					</span>
+
+<!--                    <div class="wrap-input100 validate-input m-b-23" >-->
+<!--                        {{ form|crispy }}-->
+<!--					</div>-->
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired" >
+                       {{ form.username|as_crispy_field }}
+					</div>
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Email is reauired">
+                       {{ form.email|as_crispy_field }}
+					</div>
+					<div class="wrap-input100 validate-input m-b-23" >
+                       {{ form.first_name|as_crispy_field }}
+					</div>
+					<div class="wrap-input100 validate-input m-b-23" >
+                       {{ form.last_name|as_crispy_field }}
+					</div>
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Password is reauired">
+                       {{ form.password1|as_crispy_field }}
+					</div>
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Password is reauired">
+                       {{ form.password2|as_crispy_field }}
+					</div>
+                    <div class="text-right p-t-8 p-b-31">
+						<a href="{% url 'password_reset' %}">
+							Forgot password?
+						</a>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+								Submit
+							</button>
+						</div>
+					</div>
+
+					<div class="txt1 text-center p-t-54 p-b-20">
+						<span>
+							Or Sign Up Using
+						</span>
+					</div>
+
+					<div class="flex-c-m">
+						<a href="{% url 'social:begin' 'facebook' %}" class="login100-social-item bg1">
+							<i class="fa fa-facebook"></i>
+						</a>
+
+						<a href="#" class="login100-social-item bg2">
+							<i class="fa fa-twitter"></i>
+						</a>
+
+						<a href="{% url 'social:begin' 'github' %}" class="login100-social-item bg3">
+							<i class="fa fa-github"></i>
+						</a>
+					</div><br><br>
+
+					<div class="flex-col-c p-t-10">
+						<a href="{% url 'login' %}" class="txt2">
+							Login
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="{% static 'Social_Apps/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Social_Apps/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Social_Apps/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'Social_Apps/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Social_Apps/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Social_Apps/vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'Social_Apps/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Social_Apps/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'Social_Apps/js/main.js' %}"></script>
+
+</body>
+</html>
