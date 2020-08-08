@@ -20,10 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b77923d-f6bb-488b-b471-28a5444145d2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BlogSite/Social_Apps/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlogSite/Social_Apps/signals.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Django_Social_Login" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../login_and_registration" beforeDir="false" afterPath="$PROJECT_DIR$/../login_and_registration" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlogSite/Blog/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlogSite/BlogSite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/BlogSite/BlogSite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlogSite/BlogSite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/BlogSite/BlogSite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlogSite/Social_Apps/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/BlogSite/Social_Apps/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlogSite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/BlogSite/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlogSite/templates/Base.html" beforeDir="false" afterPath="$PROJECT_DIR$/BlogSite/templates/Base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +42,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1fkedOju9U7LPox08ONN6SlFySx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -49,7 +53,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/BlogSite/Blog/static/Blog" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PycharmProjects\Blog-Site-Project-Using-Django\BlogSite\Blog\static\Blog" />
+      <recent name="C:\Users\User\PycharmProjects\Blog-Site-Project-Using-Django\BlogSite\Blog\templates\Blog" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -81,5 +92,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1596773148805" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1596775422295">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1596775422295" />
   </component>
 </project>

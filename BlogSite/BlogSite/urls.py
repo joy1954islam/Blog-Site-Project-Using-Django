@@ -20,13 +20,16 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 
+
+from Blog import views as blog_views
+
 from Social_Apps import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('profile/', views.Profile, name='Profile'),
-    path('', views.home, name='home'),
+
     path('login/', auth_views.LoginView.as_view(template_name='Social_Apps/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='Social_Apps/logout.html'), name='logout'),
     path('sign-up/', views.register, name='sign_up'),
@@ -44,6 +47,12 @@ urlpatterns = [
     path('settings/', views.SettingsView.as_view(), name='settings'),
     path('settings/password/', views.password, name='password'),
     path('oauth/', include('social_django.urls', namespace='social')),
+
+    path('about/', blog_views.about, name='about'),
+    path('addPost/', blog_views.addPost, name='addPost'),
+    path('', blog_views.viewPostList.as_view(), name='viewPost'),
+    path('deletePost/<int:pk>', blog_views.deletePost, name='deletePost'),
+    path('editPost/<int:pk>', blog_views.updatePost, name='editPost'),
 
 ]
 if settings.DEBUG:

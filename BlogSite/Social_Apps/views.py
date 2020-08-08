@@ -12,8 +12,6 @@ from django.contrib import messages
 from .forms import UserRegisterForm, UserUpdateForm, ProfileForm
 
 
-def home(request):
-    return render(request, 'Base.html', )
 
 
 def Profile(request):

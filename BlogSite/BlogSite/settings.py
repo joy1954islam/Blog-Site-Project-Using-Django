@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'Social_Apps.apps.SocialAppsConfig',
     'social_django',
     'crispy_forms',
+    'Blog',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -139,7 +141,7 @@ MEDIA_URL = '/media/'
 
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'viewPost'
 
 
 SOCIAL_AUTH_GITHUB_KEY = ''

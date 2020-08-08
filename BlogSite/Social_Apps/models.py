@@ -10,6 +10,7 @@ GENDER_CHOICES = (
 ('P', 'Prefer not to answer'),
 )
 
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     nickname = models.TextField(max_length=64, null=True, blank=True)
@@ -19,6 +20,6 @@ class Profile(models.Model):
     bio = models.TextField(max_length=1024, null=True, blank=True)
     profile_image = models.ImageField(default='default-avatar.png', upload_to='profile/', null=True, blank=True)
 
-from django.db import models
 
-# Create your models here.
+
+

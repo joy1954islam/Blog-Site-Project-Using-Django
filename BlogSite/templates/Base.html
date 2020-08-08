@@ -39,6 +39,16 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             {% if request.user.is_authenticated %}
+            <li class="nav-item">
+                <a  class="nav-link" href="{% url 'addPost' %}">Add Post</a>
+            </li>
+            <li class="nav-item">
+                <a  class="nav-link" href="{% url 'viewPost' %}">View Post</a>
+            </li>
+            <li class="nav-item">
+                <a  class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+
                 <div class="dropdown show">
                       <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                        {{ user.username }}
@@ -57,17 +67,10 @@
                       </div>
                 </div>
 
-            <li class="nav-item">
-                <a  class="nav-link" href="{% url 'Profile' %}">Profile</a>
-            </li>
-
-            <li class="nav-item">
-                <a  class="nav-link" href="{% url 'change_profile' %}">Change Profile</a>
-            </li>
-            <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout'%}">Log out</a>
-            </li>
             {% else %}
+             <li class="nav-item">
+                <a  class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'login' %}">Log in</a>
                 </li>
@@ -81,16 +84,37 @@
     </div>
 
 </nav>
-<div class="container">
-      <div class="row justify-content">
-        <div class="col-8">
-          <hr class="mt-0 mb-4">
-          {% block content %}
-
-          {% endblock %}
-        </div>
-      </div>
-</div>
+<br>
+<br>
+<br>
+<br>
+<main role="main" class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }}">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        {% block content %}{% endblock %}
+                        </div>
+                        <div class="col-md-4">
+                        <div class="content-section">
+                            <h3>Our Sidebar</h3>
+                            <p class='text-muted'>You can put any information here you'd like.
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-light">Latest Posts</li>
+                                <li class="list-group-item list-group-item-light">Announcements</li>
+                                <li class="list-group-item list-group-item-light">Calendars</li>
+                                <li class="list-group-item list-group-item-light">etc</li>
+                            </ul>
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+</main>
 <!--===============================================================================================-->
 	<script src="{% static 'Social_Apps/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
 <!--===============================================================================================-->
